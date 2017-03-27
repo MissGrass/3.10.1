@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+static char *GetString(char *pString)
+{
+	return pString;
+ } 
+ 
+ static void ShowString(char *pString)
+ {
+ 	printf("%s\n",pString);
+ }
+ 
+ int main()
+ {
+ 	char *pMyString;
+ 	
+ 	pMyString=GetString("Hello!");
+ 	ShowString(pMyString);
+ 	
+ 	return 0;
+ }
