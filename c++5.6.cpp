@@ -1,0 +1,19 @@
+//forstr1.cpp--using for with a string
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+int main() {
+	cout << "Enter a word: ";
+	string word;
+	cin >> word;
+	
+	//dispaly letters in reverse order
+	for(int i = word.size() - 1; i >= 0; i--) {
+		cout << word[i];
+	}
+	cout << "\nBye.\n" ;
+	
+    return 0;
+}
+
