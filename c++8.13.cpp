@@ -1,21 +1,20 @@
-//twoswap.cpp--specializatin overrides a template
+//twoswap.cpp--specialization overrides a template
 #include <iostream>
 template <typename T>
-
-void Swap(T &a, T &b);
+void Swap(T &a,T &b);
 
 struct job{
 	char name[40];
 	double salary;
 	int floor;
-};
+}; 
 
 //explicit specialization
 template <> void Swap<job>(job &j1, job &j2);
 void Show(job &j);
 
-using namespace std;
-int main() {
+int main(){
+	using namespace std;
 	cout.precision(2);
 	cout.setf(ios::fixed, ios::floatfield);
 	int i = 10, j = 20;
@@ -24,17 +23,17 @@ int main() {
 	Swap(i, j);
 	cout << "Now i, j = " << i << ", " << j << ".\n";
 	
-	job sue = {"Susan Yaffee", 73000.60, 7};
-	job sidney = {"Sidney Taffee", 78060.72, 9};
+	job sue = {"Susan Yaffee",73000.60,7};
+	job sidney = {"Sidney Taffee", 78060.72,9};
 	cout << "Before job swapping:\n";
 	Show(sue);
 	Show(sidney);
-	Swap(sue, sidney);
+	Swap(sue,sidney);
 	cout << "After job swapping:\n";
 	Show(sue);
 	Show(sidney);
-		
-    return 0;
+	//cin.get();
+	return 0;
 }
 
 template <typename T>
@@ -44,6 +43,8 @@ void Swap(T &a, T &b){
 	a = b;
 	b = temp;
 }
+
+//swaps just the salary and floor fields of a job structure
 
 template <> void Swap<job>(job &j1, job &j2){
 	double t1;
@@ -57,6 +58,6 @@ template <> void Swap<job>(job &j1, job &j2){
 }
 
 void Show(job &j){
+	using namespace std;
 	cout << j.name << ": $" << j.salary << " on floor " << j.floor << endl;
 }
-
